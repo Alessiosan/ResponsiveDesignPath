@@ -1,0 +1,190 @@
+/* # Front-end Style Guide
+
+## Layout
+
+The designs were created to the following widths:
+
+- Mobile: 375px
+- Desktop: 1440px
+
+> 💡 These are just the design sizes. Ensure content is responsive and meets WCAG requirements by testing the full range of screen sizes from 320px to large screens.
+
+## Colors
+
+### Primary
+
+- Red: hsl(0, 78%, 62%)
+- Cyan: hsl(180, 62%, 55%)
+- Orange: hsl(34, 97%, 64%)
+- Blue: hsl(212, 86%, 64%)
+
+### Neutral
+
+- Very Dark Blue: hsl(234, 12%, 34%)
+- Grayish Blue: hsl(229, 6%, 66%)
+- Very Light Gray: hsl(0, 0%, 98%)
+
+## Typography
+
+### Body Copy
+
+- Font size: 15px
+
+### Fonts
+
+- Family: [Poppins](https://fonts.google.com/specimen/Poppins)
+- Weights: 200, 400, 600
+
+> 💎 [Upgrade to Pro](https://www.frontendmentor.io/pro?ref=style-guide) for design file access to see all design details and get hands-on experience using a professional workflow with tools like Figma. */
+
+:root {
+   --clr-primary-400: hsl(0, 78%, 62%); /* Red */
+   --clr-primary-500: hsl(180, 62%, 55%); /* Cyan */
+   --clr-primary-600: hsl(34, 97%, 64%); /* Orange */
+   --clr-primary-700: hsl(212, 86%, 64%); /* Blue */
+
+   --clr-neutral-200: hsl(0, 0%, 98%); /* Very Light Gray */
+   --clr-neutral-300: hsl(229, 6%, 66%); /* Grayish Blue */
+   --clr-neutral-800: hsl(234, 12%, 34%); /* Very Dark Blue */
+
+   --ff-body: 'Poppins', sans-serif;
+
+   --fs-body: clamp(16.8px, 1.5vw, 18px);
+   --fs-heading: clamp(30px, 4vw, 38px);
+
+   --fw-light: 200;
+   --fw-regular: 400;
+   --fw-semi-bold: 600;
+
+   --gap: clamp(2rem, 2vw, 5rem);
+}
+
+html {
+   font-size: var(--fs-body);
+   font-family: var(--ff-body);
+}
+
+body {
+   font-weight: var(--fw-light);
+   margin-block: 5rem;
+   background-color: var(--clr-neutral-200);
+}
+
+.container {
+   margin-inline: auto;
+   max-width: 450px;
+   margin-top: 5rem;
+   padding-inline: 1rem;
+}
+
+/* TODO: HEADER */
+
+header .title-container {
+   max-width: 100%;
+   display: grid;
+   gap: 1rem;
+   text-align: center;
+}
+
+.title-container > * {
+   color: var(--clr-neutral-800);
+}
+
+.title-container h1 {
+   font-size: var(--fs-heading);
+}
+
+.title-container .powered-by {
+   font-weight: var(--fw-semi-bold);
+}
+
+.description__title {
+   font-weight: var(--fw-regular);
+   color: var(--clr-neutral-300);
+}
+
+
+
+/* TODO: CARDS */
+
+.grid-container {
+   display: grid;
+   gap: var(--gap);
+}
+
+.columns {
+   display: grid;
+   gap: var(--gap);
+}
+
+.card {
+   max-width: 450px;
+   padding: 2rem;
+
+   border-top: 8px solid;
+   border-radius: 8px;
+   -webkit-box-shadow: 5px 5px 26px 15px rgba(0,0,0,0.14); 
+   box-shadow: 5px 5px 26px 15px rgba(0,0,0,0.14);
+}
+
+
+.card h2 {
+   font-weight: var(--fw-semi-bold);
+   color: var(--clr-neutral-800);
+   font-size: 1.5rem;
+
+   margin-bottom: .5rem;
+}
+
+.card p {
+   color: var(--clr-neutral-300);
+   font-weight: var(--fw-regular);
+   opacity: .7;
+   line-height: 1.9;
+
+   margin-bottom: 2rem;
+}
+
+.card img {
+   margin-left: auto;
+}
+
+/* COLORS OF THE BORDERS  */
+
+.border-teal {
+   color: var(--clr-primary-500)
+}
+
+.border-red {
+   color: var(--clr-primary-400);
+}
+
+.border-orange {
+   color: var(--clr-primary-600);
+}
+
+.border-blue {
+   color: var(--clr-primary-700);
+}
+
+/* TODO: RESPONSIVE */
+
+@media (min-width: 830px) {
+  .container {
+      max-width: 700px;
+   }
+
+   main .container {
+      max-width: 1500px;
+      margin-inline: auto;
+   }
+
+   .grid-container {
+      grid-template-columns: repeat(3, 1fr);
+   }
+
+   .columns {
+      align-content: center;
+      justify-content: center;
+   }
+}
