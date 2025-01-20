@@ -1,0 +1,218 @@
+/* # Front-end Style Guide
+
+## Layout
+
+The designs were created to the following widths:
+
+- Mobile: 375px
+- Desktop: 1440px
+
+> 💡 These are just the design sizes. Ensure content is responsive and meets WCAG requirements by testing the full range of screen sizes from 320px to large screens.
+
+## Colors
+
+### Primary
+
+Moderate violet: hsl(263, 55%, 52%)
+Very dark grayish blue: hsl(217, 19%, 35%)
+Very dark blackish blue: hsl(219, 29%, 14%)
+White: hsl(0, 0%, 100%)
+
+### Neutral
+
+Light gray: hsl(0, 0%, 81%)
+Light grayish blue: hsl(210, 46%, 95%)
+
+Note for text colors:
+
+1. "Verified Graduate" has the same color as the person's name with 50% opacity
+2. Review paragraphs inside the quotations have the same color as well, but are at 70% opacity
+
+## Typography
+
+### Body Copy
+
+- Font size: 13px
+
+### Font
+
+- Family: [Barlow Semi Condensed](https://fonts.google.com/specimen/Barlow+Semi+Condensed)
+- Weights: 500, 600
+
+> 💎 [Upgrade to Pro](https://www.frontendmentor.io/pro?ref=style-guide) for design file access to see all design details and get hands-on experience using a professional workflow with tools like Figma. */
+
+:root {
+   --clr-primary-500: hsl(263, 55%, 52%);
+   --clr-primary-700: hsl(217, 19%, 35%);
+   --clr-primary-900: hsl(219, 29%, 14%);
+   --clr-neutral-100: hsl(0, 0%, 100%);
+   --clr-neutral-200: hsl(0, 0%, 81%);
+   --clr-neutral-300: hsl(210, 46%, 95%);
+
+   --fs-paragraph: clamp(16px, 1vw, 19px);
+   --fs-heading: clamp(21px, 1vw, 24px);
+   --ff-primary: "Barlow Semi Condensed", sans-serif;
+   --fw-normal: 500;
+   --fw-semi-bold: 600;
+
+   --img-width: 2.5rem;
+   --padding: 2rem;
+}
+
+/* CUSTOM PROPERTIES */
+.opacity-paragraph {
+   opacity: 0.4;
+}
+
+.opacity-half {
+   opacity: 0.5;
+}
+
+.bg-clr-500 {
+   background-color: var(--clr-primary-500);
+}
+
+.bg-clr-700 {
+   background-color: var(--clr-primary-700);
+}
+
+.bg-clr-900 {
+   background-color: var(--clr-primary-900);
+}
+
+.bg-clr-white {
+   background-color: var(--clr-neutral-100);
+}
+
+.clr-white {
+   color: var(--clr-neutral-100);
+}
+
+.clr-200 {
+   color: var(--clr-neutral-200);
+}
+
+.clr-300 {
+   color: var(--clr-neutral-300);
+}
+
+.clr-500 {
+   color: var(--clr-primary-500)
+}
+
+.clr-700 {
+   color: var(--clr-primary-700)
+}
+
+.clr-900 {
+   color: var(--clr-primary-900);
+}
+
+
+.img-style {
+   border-radius: 20px;
+   height: var(--img-width);
+   width: var(--img-width);
+}
+
+.heading {
+   font-size: var(--fs-heading);
+   font-weight: var(--fw-semi-bold);
+   line-height: 1.4;
+}
+
+.fw-semi-bold {
+   font-weight: var(--fw-semi-bold);
+}
+
+.fw-regular {
+   font-weight: var(--fw-normal);
+}
+
+.border-clr {
+   border: 2px solid var(--clr-primary-500);
+}
+
+/* STYLES */
+
+html {
+   font-family: var(--ff-primary);
+   font-size: var(--fs-paragraph);
+}
+
+body {
+   height: 100dvh;
+   display: grid;
+   place-items: center;
+   background-color: var(--clr-neutral-300);
+}
+
+.container {
+   padding: 1rem;
+
+   display: grid;
+   gap: 1rem
+}
+
+.testimonial-container {
+   border-radius: 10px;
+   overflow: hidden;
+
+   padding: var(--padding);
+   display: grid;
+   gap: .5rem;
+}
+
+.testimonial-container:first-child{
+   position: relative;
+}
+
+.testimonial-container:first-child > img {
+   position: absolute;
+   top: 0;
+   right: var(--padding);
+   z-index: 1;
+   opacity: .7;
+   width: 120px;
+}
+
+.testimonial-container:first-child 
+.content-testimonial {
+   z-index: 2;
+}
+
+.profile-container {
+   display: grid;
+   grid-template-columns: var(--img-width) 130px ;
+   gap: 1rem;
+   align-items: center;
+}
+
+@media (min-width: 961px) {
+   .container {
+      max-width: 1500px;
+      grid-template-columns: repeat(4, 1fr);
+   }
+
+   .testimonial-container:first-child {
+      grid-column: span 2;
+   }
+
+   .testimonial-container:nth-child(3) {
+      grid-column: span 1;
+      grid-row: span 1;
+   }
+
+   .testimonial-container:nth-child(4) {
+      grid-column-start: 2;
+      grid-column-end: 4;
+   }
+
+   .testimonial-container:last-child {
+      grid-column-start: 4;
+      grid-row-start: 1;
+      grid-row-end: 3;
+   }
+}
+
+
